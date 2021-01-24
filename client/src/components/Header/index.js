@@ -11,6 +11,7 @@ import {
     NavItems,
     NavLinks,
     NavLink,
+    NavLinkR,
     ButtonLogin,
 
 } from './Header.Styles';
@@ -57,8 +58,8 @@ const Header = ({ page="home" }) => {
 
                     {currentUser.email && 
                         <>
-                            <NavLinks><NavLink to='home' onClick={handleShowToggleMenu} >Inicio</NavLink></NavLinks>
-                            <NavLinks><NavLink to='recibos' onClick={handleShowToggleMenu}> Recibos</NavLink></NavLinks>
+                            <NavLinks><NavLinkR to='/clientes' onClick={handleShowToggleMenu} >Inicio</NavLinkR></NavLinks>
+                            <NavLinks><NavLinkR to='/recibos' onClick={handleShowToggleMenu}> Recibos</NavLinkR></NavLinks>
                             <NavLinks><NavLink to='estadisticas' onClick={handleShowToggleMenu} >Estadisticas </NavLink></NavLinks>
                         </>
                     }

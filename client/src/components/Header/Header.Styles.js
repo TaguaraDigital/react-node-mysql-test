@@ -113,6 +113,28 @@ export const NavLink = styled(LinkS)`
     }
 `;
 
+export const NavLinkR = styled(LinkR)`
+    position: relative;
+    color: var(--lightClr);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--ctaClr);
+        width:100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--ctaClr);
+            bottom: -2px;
+            left: 0;
+        }
+    }
+`;
 export const ButtonLogin = styled(LinkR)`
     background-color: var(--ctaClr);
     color: var(--lightClr);

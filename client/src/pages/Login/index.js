@@ -22,6 +22,9 @@ import {
 const Login = () => {
 
     const { currentUser, getUser } = useContext(AuthContext);
+
+
+    console.log('el usuario es', currentUser.email)
     
     const [isError, setIsError] = useState('');
     const [email, setEmail] = useState('');
