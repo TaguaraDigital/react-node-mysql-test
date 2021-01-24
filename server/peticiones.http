@@ -16,12 +16,12 @@ GET http://localhost:4500/users/"usuario3@correo.com"&"password1"
 Content-Type: application/json
 
 ### usuarios
-POST http://localhost:4500/users
+POST http://localhost:4500/create
 Content-Type: application/json
 
     {
-        "email": "usuario3@gmail.com",
-        "password": "passaword3"
+        "email": "hoy@correo.com",
+        "password": "hoy"
     }
 ### usuarios
 POST http://localhost:4500/login

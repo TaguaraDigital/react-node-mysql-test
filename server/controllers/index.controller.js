@@ -2,22 +2,28 @@ const dbConnection = require('../database/connections');
 const controller = {};
 
 //incluye un usuario en la base de datos
-controller.register = (req, res) => {
+controller.create = (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    
+
     const sql = "INSERT INTO users (email, password) VALUES (?,?)";
     dbConnection.query(sql, [email, password], (err, result) => {
         if (err) {
-            res.status(400).json({ message: err });
+            res.status(400).json({
+                status: 400,
+                success: false,
+                message: err.sqlMessage
+            })
             return;
         }
-        console.log(result)
         res.status(200).json({
             status: 200,
             success: true,
-            data: result
-        });
+            userId : result.isertId,
+            email,
+            password,
+            message: "ok"
+        })
     })
 }
 
@@ -50,9 +56,6 @@ controller.login = (req, res) => {
         }
     })
 }
-
-
-
 
 controller.user = (req, res) => {
     const email = req.params.email;

@@ -17,21 +17,23 @@ import {
     LoginContainer,
     MuteLink,
     BoldLink
-} from './Login.Styles'
+} from './SignUp.Styles'
 
-const Login = () => {
+const SignUp = () => {
 
-    const { getUser } = useContext(AuthContext);
-    
+    const { createUser } = useContext(AuthContext);
+
     const [isError, setIsError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
 
     let user = {}
     const history = useHistory();
 
     const handleEmail = e => setEmail(e.target.value);
     const handlePassword = e => setPassword(e.target.value);
+    const handlePasswordConfirm = e => setPasswordConfirm(e.target.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,7 +49,7 @@ const Login = () => {
 
             user = { email, password }
 
-            const resultado = await getUser(user);
+            const resultado = await createUser(user);
 
             if (resultado === "ok") {
                 history.push("/clientes")
@@ -90,7 +92,15 @@ const Login = () => {
                                 onChange={handlePassword} />
                         </FormGroup>   
 
-                        <Button> Iniciar Sesión </Button>
+                        <FormGroup id="passwordConfirm">
+                            <Input
+                                value={ passwordConfirm }
+                                type="password"
+                                name="password"
+                                placeholder="Confirmar Contraseña"
+                                onChange={handlePasswordConfirm} />
+                        </FormGroup>   
+                        <Button> Registrarse </Button>
                     </Form>
                 </CardBody>
 
@@ -103,4 +113,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default SignUp

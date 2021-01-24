@@ -68,6 +68,7 @@ const Header = ({ page="home" }) => {
                         : (page !== 'login' &&
                             <>
                                     <NavLinks><ButtonLogin to='/login' onClick={handleShowToggleMenu} >Ingresar</ButtonLogin></NavLinks>    
+                                    <NavLinks><ButtonLogin to='/signup' onClick={handleShowToggleMenu} >Registrarse</ButtonLogin></NavLinks>    
                             </>
                         )
                     }   
