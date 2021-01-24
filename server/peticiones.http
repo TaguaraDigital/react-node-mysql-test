@@ -1,0 +1,33 @@
+### consulta de todos los usuarios 
+GET http://localhost:4500/users
+Content-Type: application/json
+
+### usuarios un suario en particular    
+GET http://localhost:4500/login
+Content-Type: application/json
+
+{
+    "email": "billy@example.com",
+    "password": "password1"
+}
+
+### usuarios un suario en particular no existente
+GET http://localhost:4500/users/"usuario3@correo.com"&"password1"
+Content-Type: application/json
+
+### usuarios
+POST http://localhost:4500/users
+Content-Type: application/json
+
+    {
+        "email": "usuario3@gmail.com",
+        "password": "passaword3"
+    }
+### usuarios
+POST http://localhost:4500/login
+Content-Type: application/json
+
+    {
+        "email": "billy@example.com",
+        "password": "passaword1"
+    }
