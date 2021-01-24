@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
     --ctaInvClr: #5210ac;
     --ctaClr: #f86449;
 
+    --greenClr: #78be20;
+    --lightBlueClr: #00bfb3;
     --yellowClr: #fbe10f;
     --blueClr: #1544c0;
     --purpleClr: #5210ac;

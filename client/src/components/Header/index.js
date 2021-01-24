@@ -15,7 +15,7 @@ import {
 
 } from './Header.Styles';
 
-const Header = ({ page="landing" }) => {
+const Header = ({ page="home" }) => {
 
     const { currentUser, userLogout } = useContext(AuthContext);
     const [showMobileMenu, SetShowMobileMenu] = useState(false);
@@ -40,6 +40,21 @@ const Header = ({ page="landing" }) => {
                 </HeaderLogo>
 
                 <NavItems onClick={handleShowToggleMenu} showToggleMenu={showMobileMenu} >
+                    {!currentUser.email && page === 'landing' &&
+                        <>
+                            <NavLinks><NavLink to='home' onClick={handleShowToggleMenu} >Inicio</NavLink></NavLinks>
+                            <NavLinks><NavLink to='about' onClick={handleShowToggleMenu} >Nosotros</NavLink></NavLinks>
+                            <NavLinks><NavLink to='service' onClick={handleShowToggleMenu} >Servicios</NavLink></NavLinks>
+                            <NavLinks><NavLink to='project' onClick={handleShowToggleMenu} >Contacto</NavLink></NavLinks>
+                        </>
+                    }
+
+                    {!currentUser.email && page === 'login' &&
+                        <>
+                            <NavLinks><ButtonLogin to='/' onClick={handleShowToggleMenu} >Inicio</ButtonLogin></NavLinks>
+                        </>
+                    }
+
                     {currentUser.email && 
                         <>
                             <NavLinks><NavLink to='home' onClick={handleShowToggleMenu} >Inicio</NavLink></NavLinks>
@@ -49,8 +64,9 @@ const Header = ({ page="landing" }) => {
                     }
                     {currentUser.email
                         ? <NavLinks><ButtonLogin to='/' onClick={handleLogOut} >Cerrar sesión</ButtonLogin></NavLinks>    
-                        : (<>
-                            <NavLinks><ButtonLogin to='/' onClick={handleShowToggleMenu} >Ingresar</ButtonLogin></NavLinks>    
+                        : (page !== 'login' &&
+                            <>
+                                    <NavLinks><ButtonLogin to='/login' onClick={handleShowToggleMenu} >Ingresar</ButtonLogin></NavLinks>    
                             </>
                         )
                     }   

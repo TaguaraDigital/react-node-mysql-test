@@ -21,7 +21,7 @@ import {
 
 const Login = () => {
 
-    const { getUser } = useContext(AuthContext);
+    const { currentUser, getUser } = useContext(AuthContext);
     
     const [isError, setIsError] = useState('');
     const [email, setEmail] = useState('');
@@ -29,7 +29,6 @@ const Login = () => {
 
     let user = {}
     const history = useHistory();
-
 
     const handleEmail = e => setEmail(e.target.value);
     const handlePassword = e => setPassword(e.target.value);
