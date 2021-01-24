@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Imagen from '../../assets/image/pictures/ParqueCerroVerde.jpg'
-
-import { AuthContext } from '../../contexts/AuthContext';
 
 import {
     HeroContainer,
@@ -14,8 +12,8 @@ import {
 } from './Hero.Styles'
 
 const HeroSection = ({ video="public", user }) => {
-    const { currentUser } = useContext(AuthContext);;
-        return (
+
+    return (
         <HeroContainer id="home">
             <HeroBg>
                 <ImgBg src={Imagen} alt="bg-images"/>

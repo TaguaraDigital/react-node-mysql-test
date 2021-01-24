@@ -22,11 +22,11 @@ import {
 const Login = () => {
 
     const { getUser } = useContext(AuthContext);
-
+    
     const [isError, setIsError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [loading, setLoading] = useState(false);
+
     let user = {}
     const history = useHistory();
 
@@ -37,18 +37,18 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
+        setIsError( '' )
+
         // se debe validar los datos introducidos
 
         let isDataOk = true;
         // fin de la vlidadcion
 
         if (isDataOk) {
-            setLoading(true);
-            user = { email, password, id: "1" }
+
+            user = { email, password }
 
             const resultado = await getUser(user);
-
-            console.log('despues del get user', resultado)
 
             if (resultado === "ok") {
                 history.push("/clientes")
@@ -56,7 +56,7 @@ const Login = () => {
             else {
                 setIsError( resultado )
             }
-            setLoading(false);
+
         }         
     }
 

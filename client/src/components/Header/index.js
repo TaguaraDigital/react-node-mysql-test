@@ -50,7 +50,7 @@ const Header = ({ page="landing" }) => {
                     {currentUser.email
                         ? <NavLinks><ButtonLogin to='/' onClick={handleLogOut} >Cerrar sesión</ButtonLogin></NavLinks>    
                         : (<>
-                            <NavLinks><ButtonLogin to='/login' onClick={handleShowToggleMenu} >Ingresar</ButtonLogin></NavLinks>    
+                            <NavLinks><ButtonLogin to='/' onClick={handleShowToggleMenu} >Ingresar</ButtonLogin></NavLinks>    
                             </>
                         )
                     }   
