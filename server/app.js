@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -18,6 +18,8 @@ app.use(express.urlencoded({
 
 // Routes
 app.use(require('./router/index.route'))
+app.use(require('./router/recibos.route'))
+app.use(require('./router/pagos.route'))
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));

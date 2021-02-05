@@ -36,7 +36,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        setIsError( '' )
+        setIsError('');
 
         // se debe validar los datos introducidos
 

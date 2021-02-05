@@ -7,8 +7,8 @@ POST http://localhost:4500/login
 Content-Type: application/json
 
 {
-    "email": "billy@example.com",
-    "password": "password1"
+    "email": "usuario2@correo.com",
+    "password": "pas"
 }
 
 ### usuarios un suario en particular no existente
@@ -23,11 +23,32 @@ Content-Type: application/json
         "email": "hoy@correo.com",
         "password": "hoy"
     }
+
 ### usuarios
 POST http://localhost:4500/login
 Content-Type: application/json
 
     {
+        "email": "billy@example.com",
+        "password": "passaword1"
+    }
+
+### recibos
+POST http://localhost:4500/api/v1/recibos/
+Content-Type: application/json
+
+    {
+        "user_id": 1,
+        "email": "billy@example.com",
+        "password": "passaword1"
+    }
+
+### cobros
+POST http://localhost:4500/api/v1/recibos/stripe/
+Content-Type: application/json
+
+    {
+        "user_id": 1,
         "email": "billy@example.com",
         "password": "passaword1"
     }

@@ -84,6 +84,84 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.6)
 }
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  background: #c4c4c4;  
+}
+
+tr:nth-child(even) {
+  background: #d1d1d1;
+}
+
+.flex, 
+.list-group {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: ;
+  text-align: center;
+}
+
+.tabla {
+  margin: 2rem auto;
+  font-size: 1.5rem
+}
+.container {
+  width: 100%;
+  border: 2px solid green;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 200px;
+  border: 2px solid green;
+  background-color: var(--blueClr);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  .tarjeta {
+    padding : 2rem;
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    display: block;
+    background-color: yellow;
+  }
+}
+
+.lado-derecho {
+  width: 500px;
+  height:500px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid yellow;
+
+
+}
+.row {
+  background-color: var(--orangeClr);
+  color: white;
+  /* width: 100%; */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 `;
 
 // export const Button = styled.button`

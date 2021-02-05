@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Clientes from "./pages/Clientes";
 import Recibos from "./pages/Recibos";
+import Pagar from "./components/recibos/Pagar";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path='/signup' component={ SignUp } />
         <PrivateRoute exact path='/clientes' component={ Clientes } />
         <PrivateRoute exact path='/recibos' component={ Recibos } />
+        <PrivateRoute exact path='/pagar' component={ Pagar } />
       </Router>
     </AuthContextProvider>
   );

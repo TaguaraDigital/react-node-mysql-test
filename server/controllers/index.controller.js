@@ -3,8 +3,7 @@ const controller = {};
 
 //incluye un usuario en la base de datos
 controller.create = (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
+    const { email, password } = req.body;
 
     const sql = "INSERT INTO users (email, password) VALUES (?,?)";
     dbConnection.query(sql, [email, password], (err, result) => {
@@ -45,6 +44,7 @@ controller.login = (req, res) => {
                 userId: result[0].id,
                 email: result[0].email,
                 password: result[0].password,
+                saldo: result[0].saldo,
                 message: "ok"
             })
         } else {
